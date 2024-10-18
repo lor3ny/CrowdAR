@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private PlayerState plState;
     private Vector3 direction;
+    private LevelManager manager;
 
     public float magnitude;
     public Transform goalPos;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        manager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         direction = goalPos.position - transform.position;
         plState = PlayerState.MOVING;
 
@@ -40,6 +42,24 @@ public class PlayerController : MonoBehaviour
         return this.plState;
     }
 
+    public bool IsDead()
+    {
+        if(this.plState == PlayerState.DEAD)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool IsWinner()
+    {
+        if (this.plState == PlayerState.WINNER)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     void BasicMovement()
     {
@@ -49,5 +69,23 @@ public class PlayerController : MonoBehaviour
             return;
         }
         rb.velocity = direction.normalized * magnitude;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            plState = PlayerState.WINNER;
+            manager.FinishLevel();
+        }
+
+        Debug.Log("Touched");
+
+        if (other.GetComponent("Death"))
+        {
+            plState = PlayerState.DEAD;
+            manager.FinishLevel();
+        }
     }
 }
