@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private Rigidbody rb;
-    private PlayerState plState;
+    public PlayerState plState;
     private Vector3 direction;
     private LevelManager manager;
 
@@ -86,27 +86,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.CompareTag("Player"))
+            return;
+
         if (other.CompareTag("Finish"))
         {
             plState = PlayerState.WINNER;
             manager.FinishLevel();
         }
 
-        Debug.Log("Touched");
-
-        if (other.GetComponent("Death"))
+        if (other.CompareTag("Death"))
         {
             plState = PlayerState.DEAD;
             manager.FinishLevel();
         }
 
-        else
-        {
+        animator.SetBool("isWalking", false);
+        rb.velocity = Vector3.zero;
         
-            plState = PlayerState.IDLE;
-            Debug.Log("Switching to Idle");
-            animator.SetBool("isWalking", false);
-            rb.velocity = Vector3.zero;
-        }
     }
 }

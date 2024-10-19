@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
                 EndingRoutine(winnersCount, deathsCount, true);
             }
         }
-        Debug.Log("Finish Called! remainings: " + (playersCount - (winnersCount + deathsCount)));
+        Debug.Log("Finish Called! players: " + playersCount +" winners: " + winnersCount + " deaths: " + deathsCount);
         return;
     }
 
