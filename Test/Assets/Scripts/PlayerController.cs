@@ -20,20 +20,30 @@ public class PlayerController : MonoBehaviour
     public float magnitude;
     public Transform goalPos;
 
+    private Animator animator;
+
     void Start()
     {
+
         rb = GetComponent<Rigidbody>();
+
+        animator = GetComponentInChildren<Animator>();
+
         manager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         direction = goalPos.position - transform.position;
         plState = PlayerState.MOVING;
 
-        magnitude += Random.Range(0.01f, 0.1f);
+        magnitude += Random.Range(0.001f, 0.01f);
     }
 
     void Update()
     {
         if (plState == PlayerState.MOVING)
             BasicMovement();
+        else
+        {
+            rb.velocity = Vector3.zero; 
+        }
     }
 
 
@@ -66,8 +76,10 @@ public class PlayerController : MonoBehaviour
         if (direction.Equals(Vector3.zero))
         {
             Debug.Log("Velocity not set, the player won't move");
+            animator.SetBool("isWalking", false);
             return;
         }
+        animator.SetBool("isWalking", true);
         rb.velocity = direction.normalized * magnitude;
     }
 
@@ -86,6 +98,15 @@ public class PlayerController : MonoBehaviour
         {
             plState = PlayerState.DEAD;
             manager.FinishLevel();
+        }
+
+        else
+        {
+        
+            plState = PlayerState.IDLE;
+            Debug.Log("Switching to Idle");
+            animator.SetBool("isWalking", false);
+            rb.velocity = Vector3.zero;
         }
     }
 }
