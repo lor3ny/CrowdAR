@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: ReferenceImageLibrary
+  m_Name: EnvReference
   m_EditorClassIdentifier: 
   m_GuidLow: 5048976918136573051
   m_GuidHigh: 14384084550317485744
@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 15511612489034523794
       m_GuidHigh: 8191855516159800763
-    m_Size: {x: 0.15, y: 0.15}
+    m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
     m_Name: EnvMarker
     m_Texture: {fileID: 2800000, guid: ee6a6492515fd744bb75078c3051af71, type: 3}

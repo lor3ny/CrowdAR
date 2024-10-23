@@ -16,23 +16,25 @@ public class PlayerController : MonoBehaviour
     public PlayerState plState;
     private Vector3 direction;
     private LevelManager manager;
+    private Transform goalPos;
 
     public float magnitude;
-    public Transform goalPos;
+    public int playerID;
 
     private Animator animator;
 
+    private void Awake()
+    {
+        goalPos = GameObject.Find("t"+playerID).transform;
+    }
+
     void Start()
     {
-
         rb = GetComponent<Rigidbody>();
-
         animator = GetComponentInChildren<Animator>();
-
         manager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        direction = goalPos.position - transform.position;
-        plState = PlayerState.MOVING;
 
+        plState = PlayerState.MOVING;
         magnitude += Random.Range(0.0001f, 0.001f);
     }
 
@@ -73,12 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void BasicMovement()
     {
-        if (direction.Equals(Vector3.zero))
-        {
-            Debug.Log("Velocity not set, the player won't move");
-            animator.SetBool("isWalking", false);
-            return;
-        }
+        direction = goalPos.position - transform.position;
         animator.SetBool("isWalking", true);
         rb.velocity = direction.normalized * magnitude;
     }
