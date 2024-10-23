@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: test
+  m_Name: ReferenceImageLibrary
   m_EditorClassIdentifier: 
-  m_GuidLow: 5203135447423097330
-  m_GuidHigh: 5660163153106062985
+  m_GuidLow: 5048976918136573051
+  m_GuidHigh: 14384084550317485744
   m_DataStore:
     m_Storage: []
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 4976219589658485374
-      m_GuidHigh: 2342405310050634416
+      m_GuidLow: 4903190043659175843
+      m_GuidHigh: 8777037096825937313
     m_SerializedTextureGuid:
-      m_GuidLow: 12764494949384328327
-      m_GuidHigh: 7895646080748050922
-    m_Size: {x: 0.1, y: 0.1}
+      m_GuidLow: 15511612489034523794
+      m_GuidHigh: 8191855516159800763
+    m_Size: {x: 0.15, y: 0.15}
     m_SpecifySize: 1
-    m_Name: test_marker
+    m_Name: marker_1
     m_Texture: {fileID: 0}

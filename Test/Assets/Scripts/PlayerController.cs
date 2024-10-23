@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         direction = goalPos.position - transform.position;
         plState = PlayerState.MOVING;
 
-        magnitude += Random.Range(0.001f, 0.01f);
+        magnitude += Random.Range(0.0001f, 0.001f);
     }
 
     void Update()

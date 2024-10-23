@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-
+    public int playersNumber = 0;
     private GameObject[] players;
 
-
     // PUBLIC FUNCTIONS
-
-    public void Awake()
-    {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players.Length);
-    }
 
     public void StartLevel()
     {
@@ -27,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
         int deathsCount = DeadPlayers();
         int winnersCount = WinnerPlayers();
-        int playersCount = players.Length;
+        int playersCount = playersNumber;
 
         if (winnersCount == playersCount)
         {
@@ -75,6 +68,7 @@ public class LevelManager : MonoBehaviour
 
     private int DeadPlayers()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
         int deaths = 0;
         foreach(GameObject player in players)
         {
@@ -90,6 +84,7 @@ public class LevelManager : MonoBehaviour
 
     private int WinnerPlayers()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
         int winners = 0;
         foreach (GameObject player in players)
         {
