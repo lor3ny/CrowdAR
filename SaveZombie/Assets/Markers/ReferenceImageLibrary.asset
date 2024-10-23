@@ -25,5 +25,5 @@ MonoBehaviour:
       m_GuidHigh: 8191855516159800763
     m_Size: {x: 0.15, y: 0.15}
     m_SpecifySize: 1
-    m_Name: marker_1
-    m_Texture: {fileID: 0}
+    m_Name: EnvMarker
+    m_Texture: {fileID: 2800000, guid: ee6a6492515fd744bb75078c3051af71, type: 3}
