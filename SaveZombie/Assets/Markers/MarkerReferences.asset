@@ -21,19 +21,19 @@ MonoBehaviour:
       m_GuidLow: 4903190043659175843
       m_GuidHigh: 8777037096825937313
     m_SerializedTextureGuid:
-      m_GuidLow: 7297103506456570797
-      m_GuidHigh: 1306074528105924122
-    m_Size: {x: 0.1, y: 0.1}
+      m_GuidLow: 1883693972883511933
+      m_GuidHigh: 13572432488139092298
+    m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
     m_Name: Environment
-    m_Texture: {fileID: 2800000, guid: 3799ebad84fa65441a86f009dd1b2012, type: 3}
+    m_Texture: {fileID: 2800000, guid: 27441a7d39b01a244a71802970f75abc, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4876976457794095802
       m_GuidHigh: 17907426706354821567
     m_SerializedTextureGuid:
-      m_GuidLow: 16034181920640317184
-      m_GuidHigh: 1736594737318118857
-    m_Size: {x: 0.1, y: 0.1}
+      m_GuidLow: 9386807348404218459
+      m_GuidHigh: 13186161913126321001
+    m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
     m_Name: Water
-    m_Texture: {fileID: 2800000, guid: 0bc1b700db81de84c9c5a874b69f1918, type: 3}
+    m_Texture: {fileID: 2800000, guid: c8a8ea5ba38c824469fbad8e65a8feb6, type: 3}
