@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: EnvReference
+  m_Name: MarkerReferences
   m_EditorClassIdentifier: 
   m_GuidLow: 5048976918136573051
   m_GuidHigh: 14384084550317485744
@@ -21,9 +21,19 @@ MonoBehaviour:
       m_GuidLow: 4903190043659175843
       m_GuidHigh: 8777037096825937313
     m_SerializedTextureGuid:
-      m_GuidLow: 15511612489034523794
-      m_GuidHigh: 8191855516159800763
-    m_Size: {x: 0.09, y: 0.09}
+      m_GuidLow: 7297103506456570797
+      m_GuidHigh: 1306074528105924122
+    m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: EnvMarker
-    m_Texture: {fileID: 2800000, guid: ee6a6492515fd744bb75078c3051af71, type: 3}
+    m_Name: Environment
+    m_Texture: {fileID: 2800000, guid: 3799ebad84fa65441a86f009dd1b2012, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4876976457794095802
+      m_GuidHigh: 17907426706354821567
+    m_SerializedTextureGuid:
+      m_GuidLow: 16034181920640317184
+      m_GuidHigh: 1736594737318118857
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: Water
+    m_Texture: {fileID: 2800000, guid: 0bc1b700db81de84c9c5a874b69f1918, type: 3}
