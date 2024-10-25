@@ -11,7 +11,12 @@ public class LevelManager : MonoBehaviour
 
     public void StartLevel()
     {
-        //BHO
+        players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            PlayerController plController = player.GetComponent<PlayerController>();
+            plController.StartGame();
+        }
     }
 
     // Every player calls this function when reaches the ending point, if some players are still playing it fails

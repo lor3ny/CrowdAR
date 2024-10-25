@@ -25,7 +25,7 @@ MonoBehaviour:
       m_GuidHigh: 13572432488139092298
     m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
-    m_Name: Environment
+    m_Name: Fire
     m_Texture: {fileID: 2800000, guid: 27441a7d39b01a244a71802970f75abc, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4876976457794095802
@@ -37,3 +37,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: Water
     m_Texture: {fileID: 2800000, guid: c8a8ea5ba38c824469fbad8e65a8feb6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5271977278613508957
+      m_GuidHigh: 7231488776467576728
+    m_SerializedTextureGuid:
+      m_GuidLow: 13070820544567573805
+      m_GuidHigh: 1148833019832388408
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Environment
+    m_Texture: {fileID: 2800000, guid: 79d3fd2de208b564384b59758b79f10f, type: 3}

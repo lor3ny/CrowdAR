@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         manager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
-        plState = PlayerState.MOVING;
+        plState = PlayerState.IDLE;
         magnitude += Random.Range(0.0001f, 0.001f);
     }
 
@@ -52,6 +52,13 @@ public class PlayerController : MonoBehaviour
     public PlayerState GetState()
     {
         return this.plState;
+    }
+
+    public void StartGame()
+    {
+        if (!gameObject.activeSelf) return;
+
+        plState = PlayerState.MOVING;
     }
 
     public bool IsDead()

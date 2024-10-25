@@ -8,10 +8,11 @@ public class ImageTracker : MonoBehaviour
 {
     private ARTrackedImageManager trackedImages;
     public GameObject[] _arPrefabs;
+    public GameObject _arEnvironmentPrefab;
 
-    Dictionary<string, GameObject> ARObjects = new Dictionary<string, GameObject>();
-
-
+    private Dictionary<string, GameObject> ARObjects = new Dictionary<string, GameObject>();
+    private GameObject AREnv;
+    private bool envSpawned = false;
     void Awake()
     {
         trackedImages = GetComponent<ARTrackedImageManager>();
@@ -23,6 +24,10 @@ public class ImageTracker : MonoBehaviour
             newPrefab.SetActive(false);
             ARObjects.Add(prefab.name, newPrefab);
         }
+
+        AREnv = Instantiate(_arEnvironmentPrefab, Vector3.zero, Quaternion.identity);
+        AREnv.name = _arEnvironmentPrefab.name;
+        AREnv.SetActive(false);
     }
 
     void OnEnable()
@@ -33,6 +38,18 @@ public class ImageTracker : MonoBehaviour
     void OnDisable()
     {
         trackedImages.trackedImagesChanged -= OnTrackedImagesChanged;
+    }
+
+    public void ResetEnvSpawned()
+    {
+        envSpawned = false;
+        AREnv.SetActive(false);
+    }
+
+    public void FixEnvSpawned()
+    {
+        if(AREnv.activeSelf) 
+            envSpawned = true;
     }
 
 
@@ -54,23 +71,48 @@ public class ImageTracker : MonoBehaviour
         //Removed tracking position
         foreach (var trackedImage in eventArgs.removed)
         {
-            ARObjects[trackedImage.referenceImage.name].SetActive(false);
+            if (trackedImage.referenceImage.name == AREnv.name)
+            {
+                AREnv.SetActive(false);
+            }
+            else
+            {
+                ARObjects[trackedImage.referenceImage.name].SetActive(false);
+            }
         }
 
     }
 
     private void EnableImage(ARTrackedImage trackedImage)
     {
-        ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
-        ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
-        ARObjects[trackedImage.referenceImage.name].SetActive(true);
+        if(trackedImage.referenceImage.name == AREnv.name && !envSpawned)
+        {
+            AREnv.transform.position = trackedImage.transform.position;
+            AREnv.transform.rotation = trackedImage.transform.rotation;
+            AREnv.SetActive(true);
+        } else if(trackedImage.referenceImage.name != AREnv.name)
+        {
+            ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
+            ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
+            ARObjects[trackedImage.referenceImage.name].SetActive(true);
+        }
     }
 
     private void UpdateImage(ARTrackedImage trackedImage)
     {
-        ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
-        ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
 
+        if (trackedImage.referenceImage.name == AREnv.name && !envSpawned)
+        {
+            AREnv.transform.position = trackedImage.transform.position;
+            AREnv.transform.rotation = trackedImage.transform.rotation;
+            AREnv.SetActive(true);
+        }
+        else if (trackedImage.referenceImage.name != AREnv.name)
+        {
+            ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
+            ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
+            ARObjects[trackedImage.referenceImage.name].SetActive(true);
+        }
         /*
         foreach(GameObject arObj in ARObjects.Values)
         {
