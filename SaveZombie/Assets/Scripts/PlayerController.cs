@@ -102,6 +102,12 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Death"))
         {
+            if (IsCollidingWithBridge())
+            {
+                // If colliding with the bridge, do not set the state to DEAD
+                Debug.Log("Player is safe on the bridge!");
+                return; // Exit the method to prevent death
+            }
             plState = PlayerState.DEAD;
             manager.FinishLevel();
         }
@@ -109,5 +115,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalking", false);
         rb.velocity = Vector3.zero;
         
+    }
+
+    private bool IsCollidingWithBridge()
+    {
+        // Check if the player is colliding with an object tagged as "Bridge"
+        // You may need to modify this based on your specific bridge tag
+        return Physics.CheckSphere(transform.position, 0.5f, LayerMask.GetMask("modelObject"));
     }
 }

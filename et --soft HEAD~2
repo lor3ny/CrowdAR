@@ -1,0 +1,89 @@
+[33mcommit d476bfab48f42b289f801962f9d7b59361ffdf31[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: AnaRita23 <cora.rita2002@gmail.com>
+Date:   Sun Oct 27 20:23:42 2024 +0000
+
+    level 2 changes acid floor and ui to rotate bridge
+
+[33mcommit 492a1a7c4753d2440e7b0439cf65ad848f2bd808[m
+Author: AnaRita23 <cora.rita2002@gmail.com>
+Date:   Sun Oct 27 19:59:44 2024 +0000
+
+    level 2 acid floor and rotating bridge
+
+[33mcommit ad2085739908d226a422e178b03c4baa1d61e15b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Fri Oct 25 18:41:12 2024 +0100
+
+    Envirnoment fix
+
+[33mcommit f49e701ca64b3045506f1e8de378ae51bcb33b80[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Thu Oct 24 23:40:44 2024 +0100
+
+    Markers
+
+[33mcommit 69de38eb26c089e88eb99b88c504b2cdc75c71a4[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Thu Oct 24 23:22:10 2024 +0100
+
+    More markers together
+
+[33mcommit f72d39b3035fef3aeaa09a9b85d37ebd805ae506[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Wed Oct 23 20:16:14 2024 +0100
+
+    Boundary tests
+
+[33mcommit 2be8a42314fe015acee2630816905eeb41d506ca[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Wed Oct 23 11:07:17 2024 +0100
+
+    Environment and zombies movement
+
+[33mcommit 97b0b09543f261c3972098f239f9c1d1510e1232[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Wed Oct 23 10:06:19 2024 +0100
+
+    Is working!
+
+[33mcommit 82b01a26f9ccc3326470ae4ad31611fdef57368a[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Mon Oct 21 13:53:08 2024 +0100
+
+    Scene settings and build trials
+
+[33mcommit b56b15665222690c2f29f43406528d6a706f0e66[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Sat Oct 19 21:51:05 2024 +0100
+
+    Some fixies and first build
+
+[33mcommit 24d4dcc5988cb1a9d9a182c8286d482040f13c94[m
+Author: AnaRita23 <cora.rita2002@gmail.com>
+Date:   Sat Oct 19 03:13:44 2024 +0100
+
+    zombies and animations
+
+[33mcommit 84b80ad4cab0e71f790d50212870afaa33c9154f[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Fri Oct 18 10:18:46 2024 +0100
+
+    Some updates
+
+[33mcommit 23929e940f6878e8d5823ca691233ed023817e48[m
+Author: Lorenzo Piarulli <lorenzo.piarulli3000@gmail.com>
+Date:   Thu Oct 10 11:30:07 2024 +0100
+
+    Environment and marker
+
+[33mcommit 14033f1ba03852b948e45d959ef08643b478896e[m
+Author: Lorenzo Piarulli <54499060+lor3ny@users.noreply.github.com>
+Date:   Wed Oct 2 11:22:01 2024 +0100
+
+    Create README.md
+
+[33mcommit 12bd3586dfc4e5e06090ddd89446c5849f01b0dc[m
+Author: Lorenzo Piarulli <54499060+lor3ny@users.noreply.github.com>
+Date:   Sat Sep 28 22:50:15 2024 +0100
+
+    Initial commit
