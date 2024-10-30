@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Death
   - modelObject
+  - Fire
+  - Water
+  - Wood
   layers:
   - Default
   - TransparentFX

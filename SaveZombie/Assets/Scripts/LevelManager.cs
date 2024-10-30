@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,22 @@ public class LevelManager : MonoBehaviour
     private GameObject[] players;
 
     // PUBLIC FUNCTIONS
+
+    private GameObject winUI;
+    private GameObject loseUI;
+    private GameObject gameUI;
+
+
+    private void Awake()
+    {
+
+        winUI = GameObject.Find("WinUI");
+        loseUI = GameObject.Find("LoseUI");
+        gameUI = GameObject.Find("GameUI");
+        winUI.SetActive(false);
+        loseUI.SetActive(false);
+        gameUI.SetActive(true);
+    }
 
     public void StartLevel()
     {
@@ -57,6 +74,16 @@ public class LevelManager : MonoBehaviour
         return;
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 
     // PRIVATE FUNCTIONS
     private void EndingRoutine(int winners, int deaths, bool haveWon)
@@ -64,9 +91,20 @@ public class LevelManager : MonoBehaviour
         if (haveWon)
         {
             Debug.Log("Winners: " + winners + " Deaths: " + deaths + " YOU WON!");
+
+            // Activate canvas with winners and deaths
+            // give the change to retry or go on.
+            gameUI.SetActive(false);
+            winUI.SetActive(true);
+            
         } else
         {
             Debug.Log("Winners: " + winners + " Deaths: " + deaths + " YOU LOSE!");
+
+            // Activate loosing canvas
+            // give the change to retry or go on.
+            gameUI.SetActive(false);
+            loseUI.SetActive(true);
         }
         //Ending UI and start next level
     }
@@ -102,4 +140,5 @@ public class LevelManager : MonoBehaviour
         }
         return winners;
     }
+
 }
