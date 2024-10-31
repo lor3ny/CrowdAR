@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -96,7 +97,9 @@ public class LevelManager : MonoBehaviour
             // give the change to retry or go on.
             gameUI.SetActive(false);
             winUI.SetActive(true);
-            
+            GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
+            GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
+
         } else
         {
             Debug.Log("Winners: " + winners + " Deaths: " + deaths + " YOU LOSE!");
@@ -105,6 +108,8 @@ public class LevelManager : MonoBehaviour
             // give the change to retry or go on.
             gameUI.SetActive(false);
             loseUI.SetActive(true);
+            GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
+            GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
         }
         //Ending UI and start next level
     }
