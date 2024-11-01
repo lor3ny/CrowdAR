@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Water
   - Wood
+  - XROrigin
   layers:
   - Default
   - TransparentFX

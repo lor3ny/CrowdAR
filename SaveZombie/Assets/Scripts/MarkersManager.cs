@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-public class ImageTracker : MonoBehaviour
+public class MarkersManager : MonoBehaviour
 {
     private ARTrackedImageManager trackedImages;
     public GameObject[] _arPrefabs;
@@ -50,6 +50,11 @@ public class ImageTracker : MonoBehaviour
     {
         if(AREnv.activeSelf) 
             envSpawned = true;
+    }
+
+    public bool envIsActive()
+    {
+        return AREnv.activeSelf;
     }
 
 
