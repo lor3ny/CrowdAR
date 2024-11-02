@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6656647320253037128}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Water
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,11 +92,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6654421128451738831}
-  - component: {fileID: 3747877700314107467}
-  - component: {fileID: 7778840986763803403}
+  - component: {fileID: 2680238227973784069}
+  - component: {fileID: -7693603571021613415}
   m_Layer: 0
-  m_Name: Fire
-  m_TagString: Water
+  m_Name: Fire_obstacle
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 7048184856342783939}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3747877700314107467
+--- !u!65 &2680238227973784069
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,24 +132,36 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37407655, y: 0.36851242, z: 0.3925645}
-  m_Center: {x: -0.0013911165, y: 0.15439473, z: 0.005071033}
---- !u!114 &7778840986763803403
-MonoBehaviour:
+  m_Size: {x: 0.3130521, y: 0.31691134, z: 0.3130522}
+  m_Center: {x: -0.00000011175871, y: 0.15244094, z: 0.000000018626451}
+--- !u!54 &-7693603571021613415
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8021211414810689062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89400aad8e9e39f4c85d92be18772191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Obstacles:
-  - Wood_obstacle
-  Obstacle: 0
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
