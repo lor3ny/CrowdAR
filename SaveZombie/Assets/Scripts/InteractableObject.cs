@@ -24,7 +24,7 @@ public class InteractableObject : MonoBehaviour
             if (other.name == obstacle)
             {
                 // Do Some Actions, for now delete the obstacle
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
         }
     }

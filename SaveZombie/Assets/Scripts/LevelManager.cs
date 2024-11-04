@@ -14,17 +14,31 @@ public class LevelManager : MonoBehaviour
     private GameObject winUI;
     private GameObject loseUI;
     private GameObject gameUI;
+    private TMP_Text points;
+    private TMP_Text pointsShadow;
+    private TMP_Text maxPointsShadow;
+    private TMP_Text maxPoints;
 
 
     private void Awake()
     {
-
         winUI = GameObject.Find("WinUI");
         loseUI = GameObject.Find("LoseUI");
         gameUI = GameObject.Find("GameUI");
+        points = GameObject.Find("Points").GetComponent<TMP_Text>();
+        maxPoints = GameObject.Find("MaxPoints").GetComponent<TMP_Text>();
+        maxPointsShadow = GameObject.Find("MaxPoints_shadow").GetComponent<TMP_Text>();
+        pointsShadow = GameObject.Find("Points_shadow").GetComponent<TMP_Text>();
         winUI.SetActive(false);
         loseUI.SetActive(false);
         gameUI.SetActive(true);
+    }
+
+    private void Start()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+        maxPoints.SetText('/' + players.Length.ToString());
+        maxPointsShadow.SetText('/' + players.Length.ToString());
     }
 
     public void StartLevel()
@@ -71,7 +85,9 @@ public class LevelManager : MonoBehaviour
                 EndingRoutine(winnersCount, deathsCount, true);
             }
         }
-        Debug.Log("Finish Called! players: " + playersCount +" winners: " + winnersCount + " deaths: " + deathsCount);
+
+        points.SetText(deathsCount.ToString());
+        pointsShadow.SetText(deathsCount.ToString());
         return;
     }
 
@@ -97,7 +113,7 @@ public class LevelManager : MonoBehaviour
             // give the change to retry or go on.
             gameUI.SetActive(false);
             winUI.SetActive(true);
-            GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
+            //GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
             GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
 
         } else
@@ -108,7 +124,7 @@ public class LevelManager : MonoBehaviour
             // give the change to retry or go on.
             gameUI.SetActive(false);
             loseUI.SetActive(true);
-            GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
+            //GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
             GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
         }
         //Ending UI and start next level

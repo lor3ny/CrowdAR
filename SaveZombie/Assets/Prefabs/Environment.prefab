@@ -6556,7 +6556,7 @@ PrefabInstance:
     - target: {fileID: 8021211414810689062, guid: 6827383b1ef6e8d4c9587672b0816a18,
         type: 3}
       propertyPath: m_Name
-      value: Fire
+      value: Fire_obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
