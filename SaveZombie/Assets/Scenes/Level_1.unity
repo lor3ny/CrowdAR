@@ -1014,6 +1014,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -295
       objectReference: {fileID: 0}
+    - target: {fileID: 183746467596477075, guid: da9c401606da0db4d9b83a55874f87f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 590677711340838869, guid: da9c401606da0db4d9b83a55874f87f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1307,7 +1312,7 @@ PrefabInstance:
     - target: {fileID: 6036857347473196846, guid: da9c401606da0db4d9b83a55874f87f9,
         type: 3}
       propertyPath: m_text
-      value: You Lost!
+      value: You Win!
       objectReference: {fileID: 0}
     - target: {fileID: 7757592634814325869, guid: da9c401606da0db4d9b83a55874f87f9,
         type: 3}

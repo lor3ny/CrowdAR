@@ -53,6 +53,8 @@ public class ZombieAudio : MonoBehaviour
                     yield break; 
                 }
 
+                // General sound, put it in an update and verify state.
+
                 // Play ambient sounds only if the zombie's state is not DEAD
                 if (playerController.plState != PlayerState.DEAD)
                 {
@@ -75,6 +77,9 @@ public class ZombieAudio : MonoBehaviour
                 }
                 else
                 {
+
+                    // Death sound, maybe it's better to put it in the CollisionDetection.
+
                     // Play death sound immediately if the zombie just died and hasn't played the death sound yet
                     if (!hasPlayedDeathSound)
                     {
