@@ -12,7 +12,7 @@ public class WeatherData : MonoBehaviour {
 	private float latitude = 0.0f;
 	private float longitude = 0.0f;
 	private bool locationInitialized;
-	public TMP_Text currentWeatherText;
+	private TMP_Text currentWeatherText;
 	private GetLocation getLocation;
 
 
@@ -22,18 +22,22 @@ public class WeatherData : MonoBehaviour {
     public GameObject clouds;
 
 
+    private void Start()
+    {
+        rain.SetActive(false);
+        clear.SetActive(false);
+        snow.SetActive(false);
+        clouds.SetActive(false);
+        currentWeatherText = GameObject.Find("WeatherLog").GetComponent<TMP_Text>();
+        currentWeatherText.SetText("Loading...");
+    }
+
     public void Begin() {
         getLocation = GetComponent<GetLocation>();
         latitude = getLocation.GetLatitude();
         longitude = getLocation.GetLongitude();
         locationInitialized = true;
         StartCoroutine(GetWeatherInfo());
-
-        rain.SetActive(false);
-        clear.SetActive(false);
-        snow.SetActive(false);
-        clouds.SetActive(false);
-    
     }
 
 
@@ -64,22 +68,24 @@ public class WeatherData : MonoBehaviour {
 
 
         // APPLY THE WEATHER
-        if(mainWeather == "Rain" || mainWeather == "Drizzle" || mainWeather == "Thunderstorm")
+        if (mainWeather == "Rain" || mainWeather == "Drizzle" || mainWeather == "Thunderstorm")
         {
             rain.SetActive(true);
-        } else if (mainWeather == "Clouds" || mainWeather == "Atmosphere")
-        {
-            clouds.SetActive(true);
-        } else if (mainWeather == "Snow")
+        }
+        else if (mainWeather == "Snow")
         {
             snow.SetActive(true);
-        } else if (mainWeather == "Clear")
+        }
+        else if (mainWeather == "Clear")
         {
             clear.SetActive(true);
         }
+        else
+        {
+            clouds.SetActive(true);
+        }
 
-
-            yield return true;
+        yield return true;
     }
 }
 
