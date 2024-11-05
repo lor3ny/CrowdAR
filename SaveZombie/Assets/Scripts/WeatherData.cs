@@ -15,13 +15,26 @@ public class WeatherData : MonoBehaviour {
 	public TMP_Text currentWeatherText;
 	private GetLocation getLocation;
 
-	public void Begin() {
+
+    public GameObject rain;
+    public GameObject clear;
+    public GameObject snow;
+    public GameObject clouds;
+
+
+    public void Begin() {
         getLocation = GetComponent<GetLocation>();
         latitude = getLocation.GetLatitude();
         longitude = getLocation.GetLongitude();
         locationInitialized = true;
         StartCoroutine(GetWeatherInfo());
-	}
+
+        rain.SetActive(false);
+        clear.SetActive(false);
+        snow.SetActive(false);
+        clouds.SetActive(false);
+    
+    }
 
 
     private IEnumerator GetWeatherInfo()
@@ -53,16 +66,16 @@ public class WeatherData : MonoBehaviour {
         // APPLY THE WEATHER
         if(mainWeather == "Rain" || mainWeather == "Drizzle" || mainWeather == "Thunderstorm")
         {
-
+            rain.SetActive(true);
         } else if (mainWeather == "Clouds" || mainWeather == "Atmosphere")
         {
-
+            clouds.SetActive(true);
         } else if (mainWeather == "Snow")
         {
-
+            snow.SetActive(true);
         } else if (mainWeather == "Clear")
         {
-
+            clear.SetActive(true);
         }
 
 
