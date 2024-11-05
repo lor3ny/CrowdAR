@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public int playersNumber = 0;
     private GameObject[] players;
+    public AudioClip[] sounds;
 
     // PUBLIC FUNCTIONS
 
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private TMP_Text pointsShadow;
     private TMP_Text maxPointsShadow;
     private TMP_Text maxPoints;
+    private AudioSource audiosource;
 
 
     private void Awake()
@@ -32,13 +34,8 @@ public class LevelManager : MonoBehaviour
         winUI.SetActive(false);
         loseUI.SetActive(false);
         gameUI.SetActive(true);
-    }
-
-    private void Start()
-    {
-        players = GameObject.FindGameObjectsWithTag("Player");
-        maxPoints.SetText('/' + players.Length.ToString());
-        maxPointsShadow.SetText('/' + players.Length.ToString());
+        maxPoints.SetText('/' + playersNumber.ToString());
+        maxPointsShadow.SetText('/' + playersNumber.ToString());
     }
 
     public void StartLevel()
@@ -105,6 +102,7 @@ public class LevelManager : MonoBehaviour
     // PRIVATE FUNCTIONS
     private void EndingRoutine(int winners, int deaths, bool haveWon)
     {
+        audiosource = GameObject.Find("BackgroundMusicSource").GetComponent<AudioSource>();
         if (haveWon)
         {
             Debug.Log("Winners: " + winners + " Deaths: " + deaths + " YOU WON!");
@@ -115,6 +113,8 @@ public class LevelManager : MonoBehaviour
             winUI.SetActive(true);
             //GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
             GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
+            audiosource.Stop();
+            audiosource.PlayOneShot(sounds[0]);
 
         } else
         {
@@ -126,6 +126,8 @@ public class LevelManager : MonoBehaviour
             loseUI.SetActive(true);
             //GameObject.Find("WinnersCountInt").GetComponent<TMP_Text>().text = winners.ToString();
             GameObject.Find("DeathsCountInt").GetComponent<TMP_Text>().text = deaths.ToString();
+            audiosource.Stop();
+            audiosource.PlayOneShot(sounds[1]);
         }
         //Ending UI and start next level
     }

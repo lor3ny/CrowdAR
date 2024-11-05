@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersNumber: 10
+  sounds:
+  - {fileID: 8300000, guid: 05ed0766e633c444885aade742906ed9, type: 3}
+  - {fileID: 8300000, guid: 7887fab3cbeeab147934c12161579280, type: 3}
 --- !u!4 &220271658
 Transform:
   m_ObjectHideFlags: 0
@@ -458,6 +461,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2303515133483534299, guid: da9c401606da0db4d9b83a55874f87f9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 220271657}
+    - target: {fileID: 2973696292700243172, guid: da9c401606da0db4d9b83a55874f87f9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 220271657}
+    - target: {fileID: 3681632716547922877, guid: da9c401606da0db4d9b83a55874f87f9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 220271657}
     - target: {fileID: 4743163256753082165, guid: da9c401606da0db4d9b83a55874f87f9,
         type: 3}
       propertyPath: m_IsActive
@@ -572,6 +590,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MaxPoints_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056551900679747829, guid: da9c401606da0db4d9b83a55874f87f9,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathsCountInt
       objectReference: {fileID: 0}
     - target: {fileID: 9088717039286092957, guid: da9c401606da0db4d9b83a55874f87f9,
         type: 3}

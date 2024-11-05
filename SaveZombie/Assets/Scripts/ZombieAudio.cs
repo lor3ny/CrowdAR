@@ -29,70 +29,56 @@ public class ZombieAudio : MonoBehaviour
         audioSource.volume = regularVolume;  
         playerController = GetComponentInParent<PlayerController>();
 
-        if (zombieClips.Count > 0 && playerController != null)
+        StartCoroutine(PlayRandomZombieSounds());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Death"))
         {
-            ZombieManager.Instance.RegisterZombie(playerController);
-            StartCoroutine(PlayRandomZombieSounds());
+            if (IsCollidingWithBridge())
+            {
+                // If colliding with the bridge, do not set the state to DEAD
+                Debug.Log("Player is safe on the bridge!");
+                return; // Exit the method to prevent death
+            }
+            Debug.Log("here");
+            audioSource.Stop();
+            audioSource.PlayOneShot(deathSound, deathSoundVolume * 10.0f);
+            hasPlayedDeathSound = true;
         }
-        else
-        {
-            Debug.LogWarning("Zombie clips, AudioSource, or PlayerController not set on " + gameObject.name);
-        }
+    }
+    private bool IsCollidingWithBridge()
+    {
+        // Check if the player is colliding with an object tagged as "Bridge"
+        // You may need to modify this based on your specific bridge tag
+        return Physics.CheckSphere(transform.position, 0.5f, LayerMask.GetMask("modelObject"));
     }
 
     private IEnumerator PlayRandomZombieSounds()
     {
         while (true)
         {
-            if (playerController != null)
+            if (playerController == null)
+                yield return null;
+
+            if (hasPlayedDeathSound)
+                yield return null;
+
+            if(playerController.plState == PlayerState.WINNER)
+                yield return null;
+
+            if (playerController.plState== PlayerState.DEAD)
+                yield return null;
+
+            if (!audioSource.isPlaying)
             {
-                // Stop all sounds if all zombies are in WINNER or DEAD states
-                if (ZombieManager.Instance.AllZombiesInWinnerOrDeadState())
-                {
-                    audioSource.Stop();
-                    yield break; 
-                }
+                AudioClip clipToPlay = zombieClips[Random.Range(0, zombieClips.Count)];
+                audioSource.clip = clipToPlay;
+                audioSource.volume = regularVolume;
+                audioSource.Play();
 
-                // General sound, put it in an update and verify state.
-
-                // Play ambient sounds only if the zombie's state is not DEAD
-                if (playerController.plState != PlayerState.DEAD)
-                {
-                    hasPlayedDeathSound = false;  
-
-                    
-                    if (!audioSource.isPlaying)
-                    {
-                        AudioClip clipToPlay = zombieClips[Random.Range(0, zombieClips.Count)];
-                        audioSource.clip = clipToPlay;
-                        audioSource.volume = regularVolume;
-                        audioSource.Play();
-
-                        yield return new WaitForSeconds(clipToPlay.length + Random.Range(2f, 4f));
-                    }
-                    else
-                    {
-                        yield return null;  
-                    }
-                }
-                else
-                {
-
-                    // Death sound, maybe it's better to put it in the CollisionDetection.
-
-                    // Play death sound immediately if the zombie just died and hasn't played the death sound yet
-                    if (!hasPlayedDeathSound)
-                    {
-                        audioSource.Stop(); 
-                        audioSource.PlayOneShot(deathSound, deathSoundVolume * 10.0f);  
-                        hasPlayedDeathSound = true;
-
-                    }
-                    else
-                    {
-                        yield return null;
-                    }
-                }
+                yield return new WaitForSeconds(clipToPlay.length + Random.Range(2f, 4f));
             }
             else
             {
