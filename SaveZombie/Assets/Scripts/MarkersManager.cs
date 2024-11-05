@@ -91,8 +91,6 @@ public class MarkersManager : MonoBehaviour
     private void EnableImage(ARTrackedImage trackedImage)
     {
 
-        Debug.Log(trackedImage);
-
         if(trackedImage.referenceImage.name == AREnv.name && !envSpawned)
         {
             AREnv.transform.position = trackedImage.transform.position;
