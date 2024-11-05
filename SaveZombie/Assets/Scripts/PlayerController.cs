@@ -112,6 +112,14 @@ public class PlayerController : MonoBehaviour
             manager.FinishLevel();
         }
 
+        if (other.CompareTag("Rock"))
+        {
+            plState = PlayerState.DEAD;
+            Debug.Log("Player died from the rocks");
+            manager.FinishLevel();
+        }
+
+
         animator.SetBool("isWalking", false);
         rb.velocity = Vector3.zero;
         
