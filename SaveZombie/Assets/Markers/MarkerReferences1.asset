@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: MarkerReferences
+  m_Name: MarkerReferences1
   m_EditorClassIdentifier: 
   m_GuidLow: 5048976918136573051
   m_GuidHigh: 14384084550317485744
@@ -25,7 +25,7 @@ MonoBehaviour:
       m_GuidHigh: 11695600739098495930
     m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
-    m_Name: Fire_obstacle
+    m_Name: Fire
     m_Texture: {fileID: 2800000, guid: 8b3a0bce1f410684ba0bc300e81e4fa2, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4876976457794095802
@@ -45,5 +45,25 @@ MonoBehaviour:
       m_GuidHigh: 18097437333433872265
     m_Size: {x: 0.09, y: 0.09}
     m_SpecifySize: 1
-    m_Name: Environment
+    m_Name: Environment1
     m_Texture: {fileID: 2800000, guid: d055d9e8478a78f489ef37d45e0327fb, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5406967217585898865
+      m_GuidHigh: 13817508553113544323
+    m_SerializedTextureGuid:
+      m_GuidLow: 12440088030275231544
+      m_GuidHigh: 7541830627724370681
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: BridgeRock
+    m_Texture: {fileID: 2800000, guid: 3324df381227aca4f922ac61fff6a968, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4908783684957413900
+      m_GuidHigh: 17110237870167086729
+    m_SerializedTextureGuid:
+      m_GuidLow: 12787027360227810460
+      m_GuidHigh: 2909299956080445386
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Wall
+    m_Texture: {fileID: 2800000, guid: b3945c9ca5a2b174ca073c5be5e85f28, type: 3}

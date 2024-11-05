@@ -10,21 +10,30 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]
     public string[] Obstacles;
     [SerializeField]
-    public bool Obstacle;
+    public bool isBridge;
+
+    private GameObject fixedBridge;
+
+
+    public void SetFixedBridge(GameObject bridge)
+    {
+        this.fixedBridge = bridge;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HIT!");
-        Debug.Log(other.gameObject.name);
-        if (Obstacle) return;
 
         foreach (string obstacle in Obstacles)
         {
-
             if (other.name == obstacle)
             {
-                // Do Some Actions, for now delete the obstacle
-                other.gameObject.SetActive(false);
+                if (isBridge)
+                {
+                    fixedBridge.SetActive(true);
+                } else
+                {
+                    other.gameObject.SetActive(false);
+                }
             }
         }
     }

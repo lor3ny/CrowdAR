@@ -16,7 +16,6 @@ public class MarkersManager : MonoBehaviour
     void Awake()
     {
         trackedImages = GetComponent<ARTrackedImageManager>();
-
         foreach (GameObject prefab in _arPrefabs)
         {
             GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
@@ -27,7 +26,11 @@ public class MarkersManager : MonoBehaviour
 
         AREnv = Instantiate(_arEnvironmentPrefab, Vector3.zero, Quaternion.identity);
         AREnv.name = _arEnvironmentPrefab.name;
+        GameObject fixedBridge = GameObject.Find("FixedBridge");
         AREnv.SetActive(false);
+
+        ARObjects["BridgeRock"].GetComponent<InteractableObject>().SetFixedBridge(fixedBridge);
+        fixedBridge.SetActive(false);
     }
 
     void OnEnable()
@@ -98,6 +101,11 @@ public class MarkersManager : MonoBehaviour
             AREnv.SetActive(true);
         } else if(trackedImage.referenceImage.name != AREnv.name)
         {
+            if (!ARObjects.ContainsKey(trackedImage.referenceImage.name))
+            {
+                return;
+            }
+
             ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
             ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
             ARObjects[trackedImage.referenceImage.name].SetActive(true);
@@ -115,6 +123,11 @@ public class MarkersManager : MonoBehaviour
         }
         else if (trackedImage.referenceImage.name != AREnv.name)
         {
+            if (!ARObjects.ContainsKey(trackedImage.referenceImage.name))
+            {
+                return;
+            }
+
             ARObjects[trackedImage.referenceImage.name].transform.position = trackedImage.transform.position;
             ARObjects[trackedImage.referenceImage.name].transform.rotation = trackedImage.transform.rotation;
             ARObjects[trackedImage.referenceImage.name].SetActive(true);

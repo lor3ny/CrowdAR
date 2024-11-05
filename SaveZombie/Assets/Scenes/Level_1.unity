@@ -1223,8 +1223,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arPrefabs:
-  - {fileID: 8021211414810689062, guid: 6827383b1ef6e8d4c9587672b0816a18, type: 3}
+  - {fileID: 813550218853970290, guid: b2ff6388fcc5ee0468b986c0f7fd29d3, type: 3}
   - {fileID: 8021211414810689062, guid: ff9d0a60a938b784c9e644db2e4c1ac4, type: 3}
+  - {fileID: 7604444231708657044, guid: 4eead59d2ca69554e9356d924e52cd51, type: 3}
+  - {fileID: 8021211414810689062, guid: ecd86ec027b7f974383bf9e8577a5a49, type: 3}
   _arEnvironmentPrefab: {fileID: 4294368395158488930, guid: 717740a747c04aa4a91044608f76fa1e,
     type: 3}
 --- !u!4 &2512387470860572925
