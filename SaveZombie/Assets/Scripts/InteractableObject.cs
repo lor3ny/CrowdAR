@@ -30,6 +30,7 @@ public class InteractableObject : MonoBehaviour
                 if (isBridge)
                 {
                     fixedBridge.SetActive(true);
+                    other.gameObject.SetActive(false);
                 } else
                 {
                     other.gameObject.SetActive(false);

@@ -4881,7 +4881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minutesBetweenUpdate: 10
   API_key: 160625308468840adb2b7afa3ace00f0
-  currentWeatherText: {fileID: 0}
   rain: {fileID: 6429199685814605931}
   clear: {fileID: 5073745477058690645}
   snow: {fileID: 161765763170852863}
@@ -14799,7 +14798,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.050980393}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.38431373}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14863,7 +14862,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 3
       minScalar: 0.1
       maxCurve:
         serializedVersion: 2

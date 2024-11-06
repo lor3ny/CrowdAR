@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: MarkerReferences5
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5031263057281493468
+  m_GuidHigh: 103240814448784279
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4903190043659175843
+      m_GuidHigh: 8777037096825937313
+    m_SerializedTextureGuid:
+      m_GuidLow: 469534627522546638
+      m_GuidHigh: 11695600739098495930
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Fire
+    m_Texture: {fileID: 2800000, guid: 8b3a0bce1f410684ba0bc300e81e4fa2, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4876976457794095802
+      m_GuidHigh: 17907426706354821567
+    m_SerializedTextureGuid:
+      m_GuidLow: 12822915093106614716
+      m_GuidHigh: 15622258938417375721
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Water
+    m_Texture: {fileID: 2800000, guid: a59d61bc2556b1f4e9e989f5bb69cdd8, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5271977278613508957
+      m_GuidHigh: 7231488776467576728
+    m_SerializedTextureGuid:
+      m_GuidLow: 8715669840395098600
+      m_GuidHigh: 18097437333433872265
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Environment5
+    m_Texture: {fileID: 2800000, guid: d055d9e8478a78f489ef37d45e0327fb, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5406967217585898865
+      m_GuidHigh: 13817508553113544323
+    m_SerializedTextureGuid:
+      m_GuidLow: 12440088030275231544
+      m_GuidHigh: 7541830627724370681
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: BridgeRock
+    m_Texture: {fileID: 2800000, guid: 3324df381227aca4f922ac61fff6a968, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4908783684957413900
+      m_GuidHigh: 17110237870167086729
+    m_SerializedTextureGuid:
+      m_GuidLow: 12787027360227810460
+      m_GuidHigh: 2909299956080445386
+    m_Size: {x: 0.09, y: 0.09}
+    m_SpecifySize: 1
+    m_Name: Wall
+    m_Texture: {fileID: 2800000, guid: b3945c9ca5a2b174ca073c5be5e85f28, type: 3}

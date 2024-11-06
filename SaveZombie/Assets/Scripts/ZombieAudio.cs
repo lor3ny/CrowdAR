@@ -34,7 +34,10 @@ public class ZombieAudio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Death"))
+        if (hasPlayedDeathSound)
+            return;
+
+        if (other.CompareTag("Death") || other.CompareTag("Rock"))
         {
             if (IsCollidingWithBridge())
             {

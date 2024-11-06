@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
     private TMP_Text maxPoints;
     private AudioSource audiosource;
 
-
     private void Awake()
     {
         winUI = GameObject.Find("WinUI");
@@ -45,6 +44,12 @@ public class LevelManager : MonoBehaviour
         {
             PlayerController plController = player.GetComponent<PlayerController>();
             plController.StartGame();
+        }
+
+        GameObject[] shooters = GameObject.FindGameObjectsWithTag("Shooter");
+        foreach(GameObject shooter in shooters)
+        {
+            shooter.GetComponent<ShooterManager>().Begin();
         }
     }
 

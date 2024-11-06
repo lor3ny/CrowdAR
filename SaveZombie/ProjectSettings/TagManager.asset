@@ -12,6 +12,7 @@ TagManager:
   - XROrigin
   - Rock
   - Wall
+  - Shooter
   layers:
   - Default
   - TransparentFX

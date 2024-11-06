@@ -91,6 +91,11 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        if(plState == PlayerState.DEAD || plState == PlayerState.WINNER)
+        {
+            return;
+        }
+
         if (other.CompareTag("Player"))
             return;
 

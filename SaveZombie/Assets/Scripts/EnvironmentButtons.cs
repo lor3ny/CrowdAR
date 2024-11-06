@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnvironmentButtons : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class EnvironmentButtons : MonoBehaviour
     {
         m_Levels.StartLevel();
         buttonStart.interactable = false;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Update()

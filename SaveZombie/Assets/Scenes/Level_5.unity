@@ -1206,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: 40c6cd5c5b11a9849a936bde58bf94ab,
+  m_SerializedLibrary: {fileID: 11400000, guid: 058ed109d6d849043a65b40416e71a0c,
     type: 2}
   m_MaxNumberOfMovingImages: 2
   m_TrackedImagePrefab: {fileID: 0}
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   - {fileID: 8021211414810689062, guid: ff9d0a60a938b784c9e644db2e4c1ac4, type: 3}
   - {fileID: 7604444231708657044, guid: 4eead59d2ca69554e9356d924e52cd51, type: 3}
   - {fileID: 8021211414810689062, guid: ecd86ec027b7f974383bf9e8577a5a49, type: 3}
-  _arEnvironmentPrefab: {fileID: 4294368395158488930, guid: 717740a747c04aa4a91044608f76fa1e,
+  _arEnvironmentPrefab: {fileID: 4294368395158488930, guid: 645aba8cbceaf284db2d0337665f0e31,
     type: 3}
   isBridgeLevel: 0
 --- !u!4 &2512387470860572925

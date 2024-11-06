@@ -13,9 +13,13 @@ public class MarkersManager : MonoBehaviour
     private Dictionary<string, GameObject> ARObjects = new Dictionary<string, GameObject>();
     private GameObject AREnv;
     private bool envSpawned = false;
+
+    public bool isBridgeLevel = false;
+
     void Awake()
     {
         trackedImages = GetComponent<ARTrackedImageManager>();
+        GameObject fixedBridge;
         foreach (GameObject prefab in _arPrefabs)
         {
             GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
@@ -26,11 +30,13 @@ public class MarkersManager : MonoBehaviour
 
         AREnv = Instantiate(_arEnvironmentPrefab, Vector3.zero, Quaternion.identity);
         AREnv.name = _arEnvironmentPrefab.name;
-        GameObject fixedBridge = GameObject.Find("FixedBridge");
+        if (isBridgeLevel)
+        {
+            fixedBridge = GameObject.Find("FixedBridge");
+            ARObjects["BridgeRock"].GetComponent<InteractableObject>().SetFixedBridge(fixedBridge);
+            fixedBridge.SetActive(false);
+        }
         AREnv.SetActive(false);
-
-        ARObjects["BridgeRock"].GetComponent<InteractableObject>().SetFixedBridge(fixedBridge);
-        fixedBridge.SetActive(false);
     }
 
     void OnEnable()
