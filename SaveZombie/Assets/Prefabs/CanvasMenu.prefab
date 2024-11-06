@@ -161,6 +161,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7685253916703012113}
   - {fileID: 5649546551192176076}
   - {fileID: 2779630763241931971}
   - {fileID: 8699497687802140532}
@@ -1949,7 +1950,7 @@ GameObject:
   - component: {fileID: 5782726868631019649}
   - component: {fileID: 3721969744333817627}
   m_Layer: 5
-  m_Name: Background (1)
+  m_Name: black hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1962,12 +1963,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5499355229330705392}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6154284667701803646}
+  m_Father: {fileID: 620207452303415152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2044,7 +2045,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4745754021668714734}
-  - {fileID: 7685253916703012113}
   - {fileID: 1655156676580100071}
   - {fileID: 620207452303415152}
   m_Father: {fileID: 0}
